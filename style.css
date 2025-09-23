@@ -1,63 +1,65 @@
+/* Resetando algumas configurações padrões */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9; /* Um fundo mais suave */
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  padding: 20px;
 }
 
-#saida {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    width: 350px;
-    text-align: center;
-    animation: aparecer 0.6s ease-in-out;
+/* Estilo do título */
+h1 {
+  color: #9e1da2; /* Roxo mais suave */
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-h1, h2 {
-    margin-bottom: 15px;
-    color: #d35400;
-}
-
+/* Estilo dos parágrafos */
 p {
-    font-size: 16px;
-    margin: 10px 0;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
 }
 
+/* Caixa para mostrar os resultados */
+.resultados {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resultados p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Estilo do botão (caso queira adicionar um no futuro) */
 button {
-    margin: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: #e67e22;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s;
+  padding: 10px 20px;
+  background-color: #9e1da2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background: #d35400;
-    transform: scale(1.05);
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  background-color: #264e52;
 }

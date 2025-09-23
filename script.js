@@ -1,58 +1,39 @@
+// Nome da cantina
 var nomeCantina = "Cantina da Escola";
+console.log("Bem-vindo à " + nomeCantina);
+
+// Quantidade de salgados disponíveis
 let salgados = 20;
+console.log("Temos " + salgados + " salgados disponíveis.");
+
+// Preço fixo do salgado
 const precoSalgado = 5;
-let totalVendido = 0;
+console.log("Cada salgado custa R$" + precoSalgado);
+// Atualizando o número de salgados e calculando quanto foi vendido
+salgados = salgados - 5;
+let totalVendido = 5 * precoSalgado;
 
-// Pegando a div onde vamos mostrar as informações
-let saida = document.getElementById("saida");
+console.log("Agora restam " + salgados + " salgados.");
+console.log("A cantina vendeu R$" + totalVendido);
 
-// Função para mostrar status da cantina
-function mostrarStatus() {
-    saida.innerHTML = `
-        <h2>${nomeCantina}</h2>
-        <p>Temos <strong>${salgados}</strong> salgados disponíveis.</p>
-        <p>Cada salgado custa <strong>R$${precoSalgado}</strong>.</p>
-        <p>Total vendido até agora: <strong>R$${totalVendido}</strong>.</p>
-        <button onclick="comprar(1)">Comprar 1 salgado</button>
-        <button onclick="comprar(5)">Comprar 5 salgados</button>
-    `;
+// Testando alteração do preço do salgado (const não pode ser alterado)
+try {
+  precoSalgado = 6; // Isso vai gerar um erro
+} catch (error) {
+  console.log("Erro ao tentar mudar precoSalgado: " + error.message);
 }
 
-// Função para comprar salgados
-function comprar(qtd) {
-    if (salgados >= qtd) {
-        salgados -= qtd;
-        totalVendido += qtd * precoSalgado;
-        mostrarStatus();
-    } else {
-        alert("Não temos salgados suficientes!");
-    }
-}
-
-// Chama a função ao carregar
-mostrarStatus();
-
-// Testes de var, let e const
-console.log("=== Testando var, let e const ===");
-
+// Teste de escopo de var e let
 if (true) {
-    var testeVar = "Sou var";
-    let testeLet = "Sou let";
-
-    console.log("Dentro do bloco →", testeVar);
-    console.log("Dentro do bloco →", testeLet);
+  var testeVar = "Sou var"; // var tem escopo global ou de função
+  let testeLet = "Sou let"; // let tem escopo de bloco
+  console.log(testeVar); // funciona
+  console.log(testeLet); // funciona
 }
 
-console.log("Fora do bloco →", testeVar);
-
+console.log(testeVar); // funciona porque var é global ou de função
 try {
-    console.log("Fora do bloco →", testeLet);
-} catch (erro) {
-    console.log("Fora do bloco → ERRO:", erro.message);
-}
-
-try {
-    precoSalgado = 6;
-} catch (erro) {
-    console.log("Tentando alterar const → ERRO:", erro.message);
+  console.log(testeLet); // Gera erro porque let é de escopo de bloco
+} catch (error) {
+  console.log("Erro ao acessar testeLet: " + error.message);
 }
